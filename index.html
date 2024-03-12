@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glasses Button Animation</title>
+</head>
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        font-family: sans-serif;
+        min-height: 100vh;
+    }
+
+    .button{
+        position: relative;
+        padding: .6em 1em;
+        font-size: 1em;
+        color: white;
+        border: 2px solid white;
+        background-color: transparent;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .button::before{
+        content: '';
+        position: absolute;
+        width: .5em;
+        background-color: white;
+        top: -15px;
+        bottom: -15px;
+        left: -28px;
+        transform: rotate(45deg);
+    }
+    
+    .button:hover::before{
+        left: calc(100% + 28px);
+        transition: .5s;
+    }
+</style>
+<body>
+    <button class="button">Click Me</button>
+</body>
+</html>
